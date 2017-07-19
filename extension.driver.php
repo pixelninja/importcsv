@@ -8,7 +8,7 @@ Class extension_importcsv extends Extension
 	{
 		return array(
 			'name' => 'Import/export CSV',
-			'version' => '0.3',
+			'version' => '0.4',
 			'release-date' => '2011-12-15',
 			'author' => array(
 				'name' => 'Twisted Interactive',
@@ -16,9 +16,9 @@ Class extension_importcsv extends Extension
 			'description' => 'Import a CSV file to create new entries for a certain section, or export an existing section to a CSV file'
 		);
 	}
-	
+
 	public function fetchNavigation() {
-		if(Administration::instance()->Author->isDeveloper())
+		if(Symphony::Author()->isDeveloper())
 		{
 			return array(
 				array(
@@ -37,6 +37,6 @@ Class extension_importcsv extends Extension
             @unlink(TMP.'/importcsv.csv');
         }
     }
-	
-	
+
+
 }
